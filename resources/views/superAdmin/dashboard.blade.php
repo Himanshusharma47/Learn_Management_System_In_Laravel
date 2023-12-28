@@ -9,34 +9,80 @@
 
         @include('superAdmin.layouts.sidebar')
 
-        <!-- Main Content Area -->
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Dashboard</h1>
-            </div>
+        <!-- Content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <!-- Add your content here -->
 
-            <!-- Course Progress Graph -->
-            <div class="card mb-4">
-                <div class="card-header">
-                    Course Progress
-                </div>
+        <!-- Graphs Section -->
+        <div class="container-fluid">
+          <h2 class="mt-4">Overall Performance</h2>
+          <!-- Add your graph components here -->
+          <div class="row">
+            <!-- Graph 1 -->
+            <div class="col-md-6">
+              <div class="card">
                 <div class="card-body">
-                    <canvas id="courseProgressChart" width="300" height="150"></canvas>
+                  <!-- Graph 1 content -->
+                  <h5 class="card-title">Graph 1</h5>
+                  <!-- Dummy Content -->
+                  <p>Dummy graph content for overall performance.</p>
                 </div>
+              </div>
             </div>
 
-            <!-- Student Monitoring Graph -->
-            <div class="card mb-4">
-                <div class="card-header">
-                    Student Monitoring
-                </div>
+            <!-- Graph 2 -->
+            <div class="col-md-6">
+              <div class="card">
                 <div class="card-body">
-                    <canvas id="studentMonitoringChart" width="300" height="150"></canvas>
+                  <!-- Graph 2 content -->
+                  <h5 class="card-title">Graph 2</h5>
+                  <!-- Dummy Content -->
+                  <p>Dummy graph content for overall performance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- Attendance Chart -->
+          <div class="row mt-4">
+              <div class="col-md-6">
+                  <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title">Attendance</h5>
+                          <!-- Canvas for Chart.js -->
+                          <canvas id="attendanceChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Student Performance Chart -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Student Performance</h5>
+                            <!-- Canvas for Chart.js -->
+                            <canvas id="performanceChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Recent Activity -->
-            <div class="card">
+            <!-- Course Progress Chart -->
+            <div class="row mt-4 mb-5">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                        <h5 class="card-title">Course Progress</h5>
+                        <!-- Canvas for Chart.js -->
+                        <canvas id="courseProgressChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Recent Activity -->
+             <div class="card mb-5">
                 <div class="card-header">
                     Recent Activity
                 </div>
@@ -48,46 +94,106 @@
                     </ul>
                 </div>
             </div>
-        </main>
+        </div>
+      </main>
     </div>
-</div>
+  </div>
 
-<!-- Your JavaScript to initialize and update the charts -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Initialize Course Progress Chart
-        var ctxCourseProgress = document.getElementById('courseProgressChart').getContext('2d');
-        var courseProgressChart = new Chart(ctxCourseProgress, {
-            type: 'line',
-            data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-                datasets: [{
-                    label: 'Course Progress',
-                    data: [50, 60, 75, 80, 90, 85, 95],
-                    borderColor: 'rgb(75, 192, 192)',
-                    borderWidth: 2,
-                    fill: false
-                }]
-            }
-        });
+ <!-- Chart.js -->
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        // Initialize Student Monitoring Chart
-        var ctxStudentMonitoring = document.getElementById('studentMonitoringChart').getContext('2d');
-        var studentMonitoringChart = new Chart(ctxStudentMonitoring, {
-            type: 'bar',
-            data: {
-                labels: ["Math", "Science", "English", "History", "Programming"],
-                datasets: [{
-                    label: 'Student Monitoring',
-                    data: [85, 78, 92, 88, 95],
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            }
-        });
-    });
-</script>
+ <!-- Your custom JavaScript for Dummy Graph Data -->
+ <script>
+   // Function to generate random data for graphs
+   function generateRandomData() {
+     var data = [];
+     for (var i = 0; i < 5; i++) {
+       data.push(Math.floor(Math.random() * 100) + 1);
+     }
+     return data;
+   }
+
+   // Dummy data for attendance
+   var attendanceData = {
+     labels: ['Module 1', 'Module 2', 'Module 3', 'Module 4', 'Module 5'],
+     datasets: [{
+       label: 'Attendance',
+       data: generateRandomData(),
+       backgroundColor: 'rgba(75, 192, 192, 0.2)',
+       borderColor: 'rgba(75, 192, 192, 1)',
+       borderWidth: 1
+     }]
+   };
+
+   // Dummy data for student performance
+   var performanceData = {
+     labels: ['Module 1', 'Module 2', 'Module 3', 'Module 4', 'Module 5'],
+     datasets: [{
+       label: 'Student Performance',
+       data: generateRandomData(),
+       backgroundColor: 'rgba(255, 206, 86, 0.2)',
+       borderColor: 'rgba(255, 206, 86, 1)',
+       borderWidth: 1
+     }]
+   };
+
+   // Get the context of the canvas elements
+   var attendanceCtx = document.getElementById('attendanceChart').getContext('2d');
+   var performanceCtx = document.getElementById('performanceChart').getContext('2d');
+   var courseProgressCtx = document.getElementById('courseProgressChart').getContext('2d');
+
+   // Create attendance, performance, and course progress charts
+   var attendanceChart = new Chart(attendanceCtx, {
+     type: 'bar',
+     data: attendanceData,
+     options: {
+       scales: {
+         y: {
+           beginAtZero: true,
+           max: 100
+         }
+       }
+     }
+   });
+
+   var performanceChart = new Chart(performanceCtx, {
+     type: 'bar',
+     data: performanceData,
+     options: {
+       scales: {
+         y: {
+           beginAtZero: true,
+           max: 100
+         }
+       }
+     }
+   });
+
+   var courseProgressData = {
+     labels: ['Module 1', 'Module 2', 'Module 3', 'Module 4', 'Module 5'],
+     datasets: [{
+       label: 'Progress',
+       data: generateRandomData(),
+       backgroundColor: 'rgba(255, 99, 132, 0.2)',
+       borderColor: 'rgba(255, 99, 132, 1)',
+       borderWidth: 1
+     }]
+   };
+
+   // Create a bar chart for course progress
+   var courseProgressChart = new Chart(courseProgressCtx, {
+     type: 'bar',
+     data: courseProgressData,
+     options: {
+       scales: {
+         y: {
+           beginAtZero: true,
+           max: 100
+         }
+       }
+     }
+   });
+ </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 @endsection

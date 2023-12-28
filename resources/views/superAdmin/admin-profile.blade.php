@@ -64,6 +64,10 @@
                         <label for="editEmail" class="form-label">Email</label>
                         <input type="email" class="form-control" id="editEmail" value="john.doe@example.com">
                     </div>
+                    <div class="mb-3">
+                        <label for="editNumber" class="form-label">Mob.No</label>
+                        <input type="text" class="form-control" id="editNumber" value="9856412735">
+                    </div>
                     <!-- Add more form fields as needed -->
 
                     <button type="submit" class="btn btn-primary">Save Changes</button>

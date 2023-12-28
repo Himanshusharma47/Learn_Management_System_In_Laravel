@@ -1,5 +1,7 @@
 @include('superAdmin.layouts.header')
     @yield('dashboard-section')
+    @yield('student-section')
+    @yield('teacher-section')
     @yield('user-section')
     @yield('report-section')
     @yield('course-section')

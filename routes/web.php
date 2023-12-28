@@ -23,5 +23,8 @@ Route::view( '/report', 'superAdmin.reports');
 Route::view( '/course', 'superAdmin.courses');
 Route::view( '/profile', 'superAdmin.admin-profile');
 Route::view( '/communication', 'superAdmin.communication');
+Route::view( '/course', 'superAdmin.courses');
+Route::view( '/student', 'superAdmin.students');
+Route::view( '/teacher', 'superAdmin.teachers');
 
 

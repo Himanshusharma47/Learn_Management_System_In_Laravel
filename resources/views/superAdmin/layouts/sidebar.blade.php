@@ -13,18 +13,28 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/user')}}">
-                    <i class="bi bi-person"></i> Users
+                <a class="nav-link" href="{{ url('/dash')}}">
+                    <i class="bi bi-book"></i> Classes
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/report')}}">
-                    <i class="bi bi-file-earmark-text"></i> Reports
+                <a class="nav-link" href="{{ url('/student')}}">
+                    <i class="fa-solid fa-user"></i> Students
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/teacher')}}">
+                    <i class="fa-solid fa-user"></i> Teachers
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/communication')}}">
                     <i class="bi bi-chat-left-text"></i> Communication
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/report')}}">
+                    <i class="bi bi-file-earmark-text"></i> Reports
                 </a>
             </li>
         </ul>
