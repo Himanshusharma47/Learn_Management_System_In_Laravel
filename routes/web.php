@@ -28,3 +28,16 @@ Route::view( '/student', 'superAdmin.students');
 Route::view( '/teacher', 'superAdmin.teachers');
 
 
+Route::view( '/courses', 'teacher.course-create');
+Route::view( '/attend', 'teacher.attendance');
+Route::view( '/syllabus', 'teacher.syllabus');
+Route::view( '/batch', 'teacher.student-batch');
+Route::view( '/assign', 'teacher.assignments');
+Route::view( '/assign-review', 'teacher.assignments-review');
+Route::view( '/lecture', 'teacher.lecture-summary');
+Route::view( '/convo', 'teacher.teachers-convo');
+Route::view( '/t-profile', 'teacher.teacher-profile');
+Route::view( '/std-perf', 'teacher.student-performance');
+Route::view( '/overall-course', 'teacher.overall-course-progress');
+
+Route::view('/dummy', 'teacher.dummydata');

@@ -51,11 +51,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>johndoe@example.com</td>
-                        <td>9874563214</td>
-                        <td>DCAP258</td>
+                       <td>3</td>
+                       <td>Deepak kumar</td>
+                       <td>deepakkumar@gmail.com</td>
+                       <td>9632541785</td>
+                       <td>DCAP258</td>
                         <td>
                             <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
@@ -72,8 +72,6 @@
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
-                
-                
                     <!-- Add more rows as needed -->
                     </tbody>
                 </table>
