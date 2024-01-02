@@ -5,6 +5,7 @@
     @yield('user-section')
     @yield('report-section')
     @yield('course-section')
+    @yield('classes-section')
     @yield('notify-section')
     @yield('profile-section')
     @yield('communication-section')

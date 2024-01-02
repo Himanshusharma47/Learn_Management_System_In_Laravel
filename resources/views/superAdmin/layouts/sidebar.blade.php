@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/dash')}}">
+                <a class="nav-link" href="{{ url('/classes')}}">
                     <i class="bi bi-book"></i> Classes
                 </a>
             </li>
