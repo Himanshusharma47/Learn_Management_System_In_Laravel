@@ -10,10 +10,10 @@
 
            <!-- Content -->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-           
+
 <div class="container mt-5">
     <h2>Assignment Review & Student Performance</h2>
-  
+
     <!-- Assignment Review Table -->
     <h3 class="mt-4">Assignment Review</h3>
     <table class="table">
@@ -23,7 +23,7 @@
           <th>Assignment Title</th>
           <th>Student Name</th>
           <th>Submission Date</th>
-          <th>Marks</th>
+          <th>Marks Obtained</th>
           <th>Review</th>
         </tr>
       </thead>
@@ -47,7 +47,7 @@
         <!-- Add more rows as needed -->
       </tbody>
     </table>
-  
+
     <!-- Student Performance Section -->
     <h3 class="mt-4">Student Performance</h3>
     <div class="row">
@@ -94,7 +94,7 @@
         </ul>
       </div>
     </div>
-  
+
   </div>
         </main>
     </div>

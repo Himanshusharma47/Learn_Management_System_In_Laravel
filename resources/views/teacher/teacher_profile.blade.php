@@ -59,7 +59,7 @@
                    <div class="mb-3">
                         <label for="editName" class="form-label">Name</label>
                         <input type="text" class="form-control" id="editName" value="Teacher01">
-                   </div> 
+                   </div>
                     <div class="mb-3">
                         <label for="editEmail" class="form-label">Email</label>
                         <input type="email" class="form-control" id="editEmail" value="teacher@example.com">

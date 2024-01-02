@@ -3,63 +3,69 @@
     <div class="position-sticky">
         <ul class="nav flex-column">
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/overall-course')}}">
-                    Overall Course
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/lecture')}}">
-                    Lecture Summary
-                </a>
-            </li>
-
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{ url('/syllabus')}}">
-                    Syllabus Create
+                    <i class="fas fa-file-alt"></i> Syllabus Create
                 </a>
-            </li>
+            </li> --}}
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/courses')}}">
-                    Course Create
+                    <i class="fas fa-book"></i> Course Create
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/assign')}}">
-                    Assignments Create
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/assign-review')}}">
-                    Assignments Review
+                <a class="nav-link" href="{{ url('/all-courses')}}">
+                    <i class="fas fa-file-alt"></i> Course View
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/batch')}}">
-                    Student Batch
+                    <i class="fas fa-users"></i> Students Batch
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/assign')}}">
+                    <i class="fas fa-tasks"></i> Assignments Create
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/assign-review')}}">
+                    <i class="fas fa-check-square"></i> Assignments Review
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/lecture')}}">
+                    <i class="fas fa-file-powerpoint"></i> Lecture Summary
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/attend')}}">
-                    Attendance
+                    <i class="fas fa-calendar-check"></i> Attendance
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/std-perf')}}">
-                    Student Performance
+                    <i class="fas fa-chart-bar"></i> Student Performance
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/overall-course')}}">
+                    <i class="fas fa-chart-line"></i> Overall Course Progress
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/convo')}}">
-                 Teacher's Convo
+                    <i class="fas fa-comments"></i> Teachers Convo
                 </a>
             </li>
         </ul>

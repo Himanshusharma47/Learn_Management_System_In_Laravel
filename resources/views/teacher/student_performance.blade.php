@@ -14,7 +14,7 @@
         <!-- Add your content here -->
         <div class="container mt-5">
           <h2>Student Performance Overview</h2>
-        
+
           <!-- Performance Overview -->
           <div class="row mt-4">
             <div class="col-md-4">
@@ -60,7 +60,7 @@
               </ul>
             </div>
           </div>
-        
+
           <!-- Detailed Performance -->
           <div class="mt-4">
             <h3>Detailed Performance</h3>
@@ -100,11 +100,11 @@
             </table>
           </div>
         </div>
-        
+
       </main>
     </div>
   </div>
 
- 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 @endsection

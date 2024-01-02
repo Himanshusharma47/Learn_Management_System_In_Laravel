@@ -4,37 +4,37 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/dash')}}">
-                    <i class="bi bi-house-door"></i> Dashboard
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/course')}}">
-                    <i class="bi bi-book"></i> Courses
+                    <i class="fas fa-book"></i> Courses
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/classes')}}">
-                    <i class="bi bi-book"></i> Classes
+                    <i class="fas fa-chalkboard"></i> Classes
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/student')}}">
-                    <i class="fa-solid fa-user"></i> Students
+                    <i class="fas fa-user-graduate"></i> Students
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/teacher')}}">
-                    <i class="fa-solid fa-user"></i> Teachers
+                    <i class="fas fa-chalkboard-teacher"></i> Teachers
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/communication')}}">
-                    <i class="bi bi-chat-left-text"></i> Communication
+                    <i class="fas fa-comments"></i> Communication
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/report')}}">
-                    <i class="bi bi-file-earmark-text"></i> Reports
+                    <i class="fas fa-chart-bar"></i> Reports
                 </a>
             </li>
         </ul>

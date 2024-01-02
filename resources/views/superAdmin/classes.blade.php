@@ -35,7 +35,6 @@
                         <td>Dr. Puneet Kumar</td>
                         <td>DCAP306</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
@@ -46,7 +45,6 @@
                         <td>Dr. Rajinder Singh</td>
                         <td>DCAP309</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
@@ -57,7 +55,6 @@
                         <td>Mrs. Poonam Kaur</td>
                         <td>DCAP258</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>

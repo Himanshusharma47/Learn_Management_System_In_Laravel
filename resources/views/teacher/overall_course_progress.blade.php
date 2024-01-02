@@ -18,32 +18,7 @@
           <h2 class="mt-4">Overall Performance</h2>
           <!-- Add your graph components here -->
           <div class="row">
-            <!-- Graph 1 -->
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <!-- Graph 1 content -->
-                  <h5 class="card-title">Graph 1</h5>
-                  <!-- Dummy Content -->
-                  <p>Dummy graph content for overall performance.</p>
-                </div>
-              </div>
-            </div>
 
-            <!-- Graph 2 -->
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <!-- Graph 2 content -->
-                  <h5 class="card-title">Graph 2</h5>
-                  <!-- Dummy Content -->
-                  <p>Dummy graph content for overall performance.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          
           <!-- Attendance Chart -->
           <div class="row mt-4">
               <div class="col-md-6">
@@ -55,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Student Performance Chart -->
                 <div class="col-md-6">
                     <div class="card">
@@ -78,20 +53,6 @@
                         <canvas id="courseProgressChart" width="400" height="200"></canvas>
                         </div>
                     </div>
-                </div>
-            </div>
-
-             <!-- Recent Activity -->
-             <div class="card mb-5">
-                <div class="card-header">
-                    Recent Activity
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li>Student A completed the "Introduction to Programming" course.</li>
-                        <li>Student B submitted an assignment in the "Mathematics Basics" course.</li>
-                        <li>Student C joined the "Advanced Science Concepts" course.</li>
-                    </ul>
                 </div>
             </div>
         </div>

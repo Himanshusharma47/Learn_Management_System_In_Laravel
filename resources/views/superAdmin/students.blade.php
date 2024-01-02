@@ -35,7 +35,6 @@
                         <td>1234567895</td>
                         <td>Bsc.Math</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
@@ -46,7 +45,6 @@
                         <td>7537891234</td>
                         <td>B.Com</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
@@ -57,7 +55,6 @@
                         <td>9874563214</td>
                         <td>Bba</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
@@ -68,7 +65,6 @@
                         <td>7896541236</td>
                         <td>Ba</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
@@ -79,7 +75,6 @@
                         <td>9632587412</td>
                         <td>Bba</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
@@ -90,11 +85,10 @@
                         <td>8523697412</td>
                         <td>B.Com</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
-                
+
                     <!-- Add more rows as needed -->
                     </tbody>
                 </table>

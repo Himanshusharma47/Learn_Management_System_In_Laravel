@@ -5,6 +5,7 @@
     @yield('overall-course-section')
     @yield('teacher-convo-section')
     @yield('course-create-section')
+    @yield('course-view-section')
     @yield('student-batch-section')
     @yield('assignments-section')
     @yield('assignments-review-section')

@@ -18,32 +18,7 @@
           <h2 class="mt-4">Overall Performance</h2>
           <!-- Add your graph components here -->
           <div class="row">
-            <!-- Graph 1 -->
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <!-- Graph 1 content -->
-                  <h5 class="card-title">Graph 1</h5>
-                  <!-- Dummy Content -->
-                  <p>Dummy graph content for overall performance.</p>
-                </div>
-              </div>
-            </div>
 
-            <!-- Graph 2 -->
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <!-- Graph 2 content -->
-                  <h5 class="card-title">Graph 2</h5>
-                  <!-- Dummy Content -->
-                  <p>Dummy graph content for overall performance.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          
           <!-- Attendance Chart -->
           <div class="row mt-4">
               <div class="col-md-6">
@@ -55,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Student Performance Chart -->
                 <div class="col-md-6">
                     <div class="card">
