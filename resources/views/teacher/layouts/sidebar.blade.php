@@ -4,67 +4,67 @@
         <ul class="nav flex-column">
 
             {{-- <li class="nav-item">
-                <a class="nav-link" href="{{ url('/syllabus')}}">
+                <a class="nav-link" href="{{ route('syllabus')}}">
                     <i class="fas fa-file-alt"></i> Syllabus Create
                 </a>
             </li> --}}
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/courses')}}">
+                <a class="nav-link" href="{{ route('course.create')}}">
                     <i class="fas fa-book"></i> Course Create
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/all-courses')}}">
+                <a class="nav-link" href="{{ route('all.courses')}}">
                     <i class="fas fa-file-alt"></i> Course View
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/batch')}}">
+                <a class="nav-link" href="{{ route('student.batch')}}">
                     <i class="fas fa-users"></i> Students Batch
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/assign')}}">
+                <a class="nav-link" href="{{ route('assignments')}}">
                     <i class="fas fa-tasks"></i> Assignments Create
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/assign-review')}}">
+                <a class="nav-link" href="{{ route('assignments.review')}}">
                     <i class="fas fa-check-square"></i> Assignments Review
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/lecture')}}">
+                <a class="nav-link" href="{{ route('lecture.summary')}}">
                     <i class="fas fa-file-powerpoint"></i> Lecture Summary
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/attend')}}">
+                <a class="nav-link" href="{{ route('student.attendance')}}">
                     <i class="fas fa-calendar-check"></i> Attendance
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/std-perf')}}">
+                <a class="nav-link" href="{{ route('student.performance')}}">
                     <i class="fas fa-chart-bar"></i> Student Performance
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/overall-course')}}">
+                <a class="nav-link" href="{{ route('overall.course.progress')}}">
                     <i class="fas fa-chart-line"></i> Overall Course Progress
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/convo')}}">
+                <a class="nav-link" href="{{ route('teacher.convo')}}">
                     <i class="fas fa-comments"></i> Teachers Convo
                 </a>
             </li>

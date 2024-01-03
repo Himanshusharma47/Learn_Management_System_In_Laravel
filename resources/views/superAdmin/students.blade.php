@@ -21,18 +21,16 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Phone Number</th>
                         <th>Course (for students)</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <!-- Dummy Data (Replace with actual data) -->
+                  
                     <tr>
                         <td>1</td>
                         <td>John Doe</td>
                         <td>johndoe@example.com</td>
-                        <td>1234567895</td>
                         <td>Bsc.Math</td>
                         <td>
                             <button class="btn btn-danger btn-sm">Delete</button>
@@ -42,7 +40,6 @@
                         <td>2</td>
                         <td>Jane Smith</td>
                         <td>janesmith@example.com</td>
-                        <td>7537891234</td>
                         <td>B.Com</td>
                         <td>
                             <button class="btn btn-danger btn-sm">Delete</button>
@@ -52,7 +49,6 @@
                         <td>1</td>
                         <td>John Doe</td>
                         <td>johndoe@example.com</td>
-                        <td>9874563214</td>
                         <td>Bba</td>
                         <td>
                             <button class="btn btn-danger btn-sm">Delete</button>
@@ -62,7 +58,6 @@
                         <td>2</td>
                         <td>Jane Smith</td>
                         <td>janesmith@example.com</td>
-                        <td>7896541236</td>
                         <td>Ba</td>
                         <td>
                             <button class="btn btn-danger btn-sm">Delete</button>
@@ -72,7 +67,6 @@
                         <td>1</td>
                         <td>John Doe</td>
                         <td>johndoe@example.com</td>
-                        <td>9632587412</td>
                         <td>Bba</td>
                         <td>
                             <button class="btn btn-danger btn-sm">Delete</button>
@@ -82,7 +76,6 @@
                         <td>2</td>
                         <td>Jane Smith</td>
                         <td>janesmith@example.com</td>
-                        <td>8523697412</td>
                         <td>B.Com</td>
                         <td>
                             <button class="btn btn-danger btn-sm">Delete</button>

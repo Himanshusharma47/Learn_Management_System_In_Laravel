@@ -11,8 +11,9 @@
            <!-- Content -->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="container mt-5">
-                <h2>Create Assignment</h2>
-
+              <h2>Create Assignment</h2>
+              
+              <div class="card shadow p-4 mb-4">
                 <!-- Assignment Creation Form -->
                 <form method="post" enctype="multipart/form-data">
                   <div class="form-group mb-3">
@@ -42,7 +43,8 @@
 
                   <button type="submit" class="btn btn-primary">Create Assignment</button>
                 </form>
-
+              </div>
+              <div class="card shadow p-4 mb-4">
                 <!-- Dummy Data Display -->
                 <div class="mt-4">
                   <h4>Sample Assignment Details</h4>
@@ -53,6 +55,7 @@
                   <p><strong>Submission Deadline:</strong> 2023-12-31 23:59</p>
                 </div>
               </div>
+            </div>
         </main>
     </div>
 </div>

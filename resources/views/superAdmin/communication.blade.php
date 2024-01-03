@@ -15,7 +15,7 @@
             <h2 class="mt-4">Communication</h2>
             <div class="row mt-4">
                 <div class="col-md-6">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-body">
                     <h5 class="card-title mb-3">Send Message to Teacher</h5>
                     <!-- Communication Form -->

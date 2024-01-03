@@ -41,11 +41,15 @@
             padding: 5px 10px;
             border-radius: 50%;
         }
+
+        .bg-color{
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+        }
     </style>
 </head>
 <body>
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-color">
     <div class="container">
         <a class="navbar-brand" href="#">Super Admin Panel</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

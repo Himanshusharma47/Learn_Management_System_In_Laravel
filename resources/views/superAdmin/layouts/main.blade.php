@@ -2,6 +2,7 @@
     @yield('dashboard-section')
     @yield('student-section')
     @yield('teacher-section')
+    @yield('add-teacher-section')
     @yield('user-section')
     @yield('report-section')
     @yield('course-section')

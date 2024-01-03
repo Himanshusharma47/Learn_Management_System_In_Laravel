@@ -3,37 +3,37 @@
     <div class="position-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/dash')}}">
-                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                <a class="nav-link" href="{{ route('dashboard')}}">
+                    <i class="fas fa-home"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/course')}}">
+                <a class="nav-link" href="{{ route('courses')}}">
                     <i class="fas fa-book"></i> Courses
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/classes')}}">
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="{{ route('classes')}}">
                     <i class="fas fa-chalkboard"></i> Classes
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/student')}}">
+                <a class="nav-link" href="{{ route('students')}}">
                     <i class="fas fa-user-graduate"></i> Students
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/teacher')}}">
+                <a class="nav-link" href="{{ route('teachers')}}">
                     <i class="fas fa-chalkboard-teacher"></i> Teachers
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/communication')}}">
+                <a class="nav-link" href="{{ route('communication')}}">
                     <i class="fas fa-comments"></i> Communication
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/report')}}">
+                <a class="nav-link" href="{{ route('reports')}}">
                     <i class="fas fa-chart-bar"></i> Reports
                 </a>
             </li>

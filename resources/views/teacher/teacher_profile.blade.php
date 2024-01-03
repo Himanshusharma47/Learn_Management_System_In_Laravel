@@ -27,6 +27,7 @@
 
                         <!-- Email -->
                         <p>Email: teacher@example.com</p>
+                        <p>Phone: 7894561235</p>
 
                         <!-- Additional Information (Add more as needed) -->
                         <p>Role: teacher</p>
@@ -65,7 +66,7 @@
                         <input type="email" class="form-control" id="editEmail" value="teacher@example.com">
                     </div>
                     <div class="mb-3">
-                        <label for="editNumber" class="form-label">Mob.No</label>
+                        <label for="editNumber" class="form-label">Phone</label>
                         <input type="text" class="form-control" id="editNumber" value="9856412735">
                     </div>
                     <!-- Add more form fields as needed -->

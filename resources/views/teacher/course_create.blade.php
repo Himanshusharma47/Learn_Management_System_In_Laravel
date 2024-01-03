@@ -10,36 +10,38 @@
 
            <!-- Content -->
           <!-- Content -->
-          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="container mt-5">
-                <h2>Create Courses, Lessons, Topics, and Assignments</h2>
+                <div class="card shadow p-4 mb-4">
+                  <h2>Create Courses, Lessons, Topics, and Assignments</h2>
+                  
+                  <!-- Course Creation Form -->
+                    <form action="" method="post">
+                        @csrf
 
-                <!-- Course Creation Form -->
-                <form action="" method="post">
-                    @csrf
+                        <div class="form-group mb-3">
+                            <label for="courseName">Course Name :</label>
+                            <input type="text" class="form-control" id="courseName" name="courseName" placeholder="Enter Course Name">
+                        </div>
 
-                    <div class="form-group mb-3">
-                        <label for="courseName">Course Name :</label>
-                        <input type="text" class="form-control" id="courseName" name="courseName" placeholder="Enter Course Name">
-                    </div>
+                        <div class="form-group mb-3">
+                            <label for="lesson">Subject Name :</label>
+                            <input type="text" class="form-control" id="lesson" name="lesson" placeholder="Enter Lesson">
+                        </div>
 
-                    <div class="form-group mb-3">
-                        <label for="lesson">Subject Name :</label>
-                        <input type="text" class="form-control" id="lesson" name="lesson" placeholder="Enter Lesson">
-                    </div>
+                        <div class="form-group mb-3">
+                            <label for="topic">Topic :</label>
+                            <input type="text" class="form-control" id="topic" name="topic" placeholder="Enter Topic">
+                        </div>
 
-                    <div class="form-group mb-3">
-                        <label for="topic">Topic :</label>
-                        <input type="text" class="form-control" id="topic" name="topic" placeholder="Enter Topic">
-                    </div>
+                        <div class="form-group mb-3">
+                            <label for="timeline">Timeline (in weeks):</label>
+                            <input type="number" class="form-control" id="timeline" name="timeline" placeholder="Enter Timeline">
+                        </div>
 
-                    <div class="form-group mb-3">
-                        <label for="timeline">Timeline (in weeks):</label>
-                        <input type="number" class="form-control" id="timeline" name="timeline" placeholder="Enter Timeline">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Create</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </form>
+                </div>
             </div>
         </main>
     </div>
