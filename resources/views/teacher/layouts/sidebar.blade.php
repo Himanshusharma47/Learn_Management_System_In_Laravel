@@ -65,7 +65,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('teacher.convo')}}">
-                    <i class="fas fa-comments"></i> Teachers Convo
+                    <i class="fas fa-comments"></i> Messages
                 </a>
             </li>
         </ul>

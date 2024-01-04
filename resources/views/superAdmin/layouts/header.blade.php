@@ -62,10 +62,10 @@
                     <a id="notification-link" class="nav-link" href="#">Notifications <span id="notification-badge" class="badge rounded-pill bg-danger">5</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/profile')}}">Profile</a>
+                    <a class="nav-link" href="{{ route('admin.profile')}}">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="{{ route('logout')}} ">Logout</a>
                 </li>
             </ul>
         </div>

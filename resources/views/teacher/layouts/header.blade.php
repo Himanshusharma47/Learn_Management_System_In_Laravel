@@ -40,11 +40,15 @@
             padding: 5px 10px;
             border-radius: 50%;
         }
+
+        .bg-color{
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+        }
     </style>
 </head>
 <body>
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-color">
     <div class="container">
         <a class="navbar-brand" href="#">Teacher Panel</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -57,10 +61,10 @@
                     <a id="notification-link" class="nav-link" href="#">Notifications <span id="notification-badge" class="badge rounded-pill bg-danger">5</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/t-profile')}}">Profile</a>
+                    <a class="nav-link" href="{{ route('teacher.profile')}}">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="{{ route('logout') }}">Logout</a>
                 </li>
             </ul>
         </div>

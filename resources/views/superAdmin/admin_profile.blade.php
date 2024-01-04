@@ -21,20 +21,14 @@
                         <!-- Profile Image -->
                         <img src="https://images.unsplash.com/flagged/photo-1553642618-de0381320ff3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fG1lbnxlbnwwfHwwfHx8MA%3D%3D" style="width: 150px; height: 150px; object-fit: cover;" alt="Profile Image" class="img-fluid rounded-circle mb-3">
 
+                        <h3>{{$adminData->name}}</h3>
 
-                        <!-- Name -->
-                        <h3>John Doe</h3>
+                        <p>Email: {{$adminData->email}}</p>
+                        <p>Age: {{$adminData->age}}</p>
 
-                        <!-- Email -->
-                        <p>Email: john.doe@example.com</p>
-                        <p>Phone: 9633258741</p>
-
-                        <!-- Additional Information (Add more as needed) -->
                         <p>Role: Super Admin</p>
                         <p>Joined: January 1, 2022</p>
-                        <!-- Add more details as needed -->
 
-                        <!-- Edit Profile Button (Opens Modal) -->
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
                     </div>
                 </div>
@@ -56,18 +50,17 @@
             </div>
             <div class="modal-body">
                 <!-- Edit Profile Form (Add form elements as needed) -->
-                <form>
+                <form method="post" action="{{ url('admin-profile-update/'. $adminData->id) }}">
+                    @csrf
+                    @method('PUT')
                     <div class="mb-3">
-                        <label for="editName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="editName" value="John Doe">
+                        <label for="edit_name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="edit_name" name="name" value="{{$adminData->name}}">
                     </div>
+
                     <div class="mb-3">
-                        <label for="editEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="editEmail" value="john.doe@example.com">
-                    </div>
-                    <div class="mb-3">
-                        <label for="editNumber" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="editNumber" value="9856412735">
+                        <label for="edit_age" class="form-label">Age</label>
+                        <input type="text" class="form-control" id="edit_age" name="age" value="{{$adminData->age}}">
                     </div>
                     <!-- Add more form fields as needed -->
 

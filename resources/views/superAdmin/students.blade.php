@@ -22,65 +22,24 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Course (for students)</th>
+                        <th>Age</th>
                         <th>Action</th>
                     </tr>
                     </thead>
+
                     <tbody>
-                  
+                    @foreach ($studentData as $item )
                     <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>johndoe@example.com</td>
-                        <td>Bsc.Math</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                      <td>{{ $item->id}}</td>
+                      <td>{{ $item->name}}</td>
+                      <td>{{ $item->email}}</td>
+                      <td>{{ $item->course}}</td>
+                      <td>{{ $item->age}}</td>
+                      <td>
+                          <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jane Smith</td>
-                        <td>janesmith@example.com</td>
-                        <td>B.Com</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>johndoe@example.com</td>
-                        <td>Bba</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jane Smith</td>
-                        <td>janesmith@example.com</td>
-                        <td>Ba</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>johndoe@example.com</td>
-                        <td>Bba</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jane Smith</td>
-                        <td>janesmith@example.com</td>
-                        <td>B.Com</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
+                    @endforeach
 
                     <!-- Add more rows as needed -->
                     </tbody>

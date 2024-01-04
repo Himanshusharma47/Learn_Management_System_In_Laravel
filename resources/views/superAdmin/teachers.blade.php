@@ -16,7 +16,7 @@
             <div class="mb-3">
                 <a href="{{ url('/add-teacher') }}"><button type="submit" class="btn btn-primary">Add Teacher</button></a>
             </div>
-            
+
             <!-- Users Table -->
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
@@ -25,49 +25,24 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Subject Code</th>
+                        <th>Age</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <!-- Dummy Data (Replace with actual data) -->
+                    @foreach ($teacherData as $item )
                     <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>johndoe@example.com</td>
-                        <td>DCAP304</td>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->email }}</td>
+                        <td>{{ $item->age }}</td>
                         <td>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jane Smith</td>
-                        <td>janesmith@example.com</td>
-                        <td>DCAP309</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                       <td>3</td>
-                       <td>Deepak kumar</td>
-                       <td>deepakkumar@gmail.com</td>
-                       <td>DCAP258</td>
-                        <td>
-                            {{-- <button class="btn btn-primary btn-sm">View</button> --}}
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jane Smith</td>
-                        <td>janesmith@example.com</td>
-                        <td>DCAP306</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
+                    @endforeach
+
                     <!-- Add more rows as needed -->
                     </tbody>
                 </table>

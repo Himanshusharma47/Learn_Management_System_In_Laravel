@@ -7,36 +7,55 @@
     <link rel="stylesheet" href="{{ asset('assets/login/css/style.css')}}">
 </head>
 <body>
-    <!-- Registration code  -->
-    
+
+    @if (Session('success'))
+    <h1>
+    {{ session('success') }}
+    </h1>
+    @endif
+    @if (Session('error'))
+    <h1>
+        {{ session('error') }}
+    </h1>
+    @endif
+
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form method="POST" action="{{ route('signup.data')}}">
+                @csrf
                 <h1>Create Account</h1><br>
                 <input type="hidden" name="role" value="student" />
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="text" placeholder="Age" min="18" max="60" />
-                <input type="password" placeholder="Password" />
-
-                <select class="form-control" id="courseSelection" name="courseSelection">
+                <input type="text"  name="name" placeholder="Name" />
+                <input type="email"  name="email" placeholder="Email" />
+                <input type="text"  name="age" placeholder="Age" min="18" max="60" />
+                <select class="form-control" id="course" name="course">
                     <option selected>Select Course</option>
                     <option value="BBa">BBa</option>
                     <option value="Ba">Ba</option>
                     <option value="B.com">B.com</option>
-                </select><br>
-                
+                </select>
+                <input type="password" name="password"  placeholder="Password" />
+                    @error('password')
+                        {{ $message }}
+                    @enderror
+                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required />
+                <br>
+
                 <button type="submit" class="btn btn-primary">Sign Up</button>
             </form>
-            
+
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form method="POST" action="{{ route('signin.data') }}">
+                @csrf
                 <h1>Sign in</h1><br>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="email" name="email" placeholder="Email" />
+                    @error('email')
+                        {{ $message }}
+                    @enderror
+                <input type="password" name="password" placeholder="Password" />
                 <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <button type="submit"> Sign In </button>
             </form>
         </div>
         <div class="overlay-container">
@@ -52,7 +71,7 @@
                     <button class="ghost" id="signUp">Sign Up</button>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 
     <script src="{{ asset('assets/login/js/script.js')}}"></script>

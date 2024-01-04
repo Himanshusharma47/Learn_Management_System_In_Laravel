@@ -29,7 +29,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('communication')}}">
-                    <i class="fas fa-comments"></i> Communication
+                    <i class="fas fa-comments"></i> Messages (4)
                 </a>
             </li>
             <li class="nav-item">

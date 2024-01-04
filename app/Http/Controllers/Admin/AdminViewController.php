@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Auth;
 
 class AdminViewController extends Controller
 {
@@ -24,7 +28,8 @@ class AdminViewController extends Controller
      */
     public function courses()
     {
-        return view('superAdmin.courses');
+        $courseData = Course::all();
+        return view('superAdmin.courses', compact('courseData'));
     }
 
      /**
@@ -34,8 +39,42 @@ class AdminViewController extends Controller
      */
     public function adminProfile()
     {
-        return view('superAdmin.admin_profile');
+        $adminData = Auth::user();
+        return view('superAdmin.admin_profile', compact('adminData'));
     }
+
+     /**
+     * Display the admin add category view.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function adminProfileUpdate(Request $request, $id = '')
+    {
+        // dd($request->all());
+
+        try {
+            $request->validate([
+                'name' => 'required',
+                'age' => 'required|integer|between:18,90',
+            ]);
+
+            $data = User::findOrFail($id);
+            $data->name = $request->input('name');
+            $data->age = $request->input('age');
+            $data->save();
+
+            return redirect('/admin-profile');
+        } catch (QueryException $e) {
+
+            return back()->with('error', 'Database error: ' . $e->getMessage());
+
+        } catch (\Exception $e) {
+
+            return back()->with('error', 'An error occurred: ' . $e->getMessage());
+
+        }
+    }
+
 
      /**
      * Display the admin add category view.
@@ -44,7 +83,8 @@ class AdminViewController extends Controller
      */
     public function communication()
     {
-        return view('superAdmin.communication');
+        $teacherData = User::where('role', 'teacher')->get();
+        return view('superAdmin.communication', compact('teacherData'));
     }
 
      /**
@@ -64,9 +104,11 @@ class AdminViewController extends Controller
      */
     public function students()
     {
-        return view('superAdmin.students');
+        $studentData = User::where('role', 'student')->get();
+        return view('superAdmin.students', compact('studentData'));
+
     }
-    
+
      /**
      * Display the admin add category view.
      *
@@ -74,7 +116,8 @@ class AdminViewController extends Controller
      */
     public function teachers()
     {
-        return view('superAdmin.teachers');
+        $teacherData = User::where('role', 'teacher')->get();
+        return view('superAdmin.teachers', compact('teacherData'));
     }
 
      /**

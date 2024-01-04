@@ -21,57 +21,26 @@
                         <th>ID</th>
                         <th>Course</th>
                         <th>Code</th>
-                        <th>Lecturer Name</th>
+                        <th>Teacher Name</th>
                         <th>Description</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <!-- Dummy Data (Replace with actual data) -->
+                    @foreach($courseData as $item)
                     <tr>
-                        <td>1</td>
-                        <td>B.Com</td>
-                        <td>DCAP306</td>
-                        <td>Dr. Puneet Kumar</td>
-                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et nihil qui unde consectetur dolorum nesciunt eos eligendi repellat, maxime amet.</td>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->course }}</td>
+                        <td>{{ $item->subject_name}}</td>
+                        <td>{{ $item->teacher_name }}</td>
+                        <td>{{ Str::limit($item->description, 20) }}</td>
                         <td>
                             <button class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#viewModal_1">View</button>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Bba</td>
-                        <td>DCAP309</td>
-                        <td>Dr. Rajinder Singh</td>
-                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et nihil qui unde consectetur dolorum nesciunt eos eligendi repellat, maxime amet.</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm">View</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Bsc</td>
-                        <td>DCAP258</td>
-                        <td>Mrs. Poonam Kaur</td>
-                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et nihil qui unde consectetur dolorum nesciunt eos eligendi repellat, maxime amet.</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm">View</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Ba</td>
-                        <td>DCAP304</td>
-                        <td>Dr. Renu Devi</td>
-                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et nihil qui unde consectetur dolorum nesciunt eos eligendi repellat, maxime amet.</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm">View</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
+                   @endforeach
                     </tbody>
                 </table>
             </div>

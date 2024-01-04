@@ -23,11 +23,11 @@
 
 
                         <!-- Name -->
-                        <h3>John Doe</h3>
+                        <h3>{{$teacherData->name}}</h3>
 
                         <!-- Email -->
-                        <p>Email: teacher@example.com</p>
-                        <p>Phone: 7894561235</p>
+                        <p>Email: {{$teacherData->email}}</p>
+                        <p>Age:{{$teacherData->age}}</p>
 
                         <!-- Additional Information (Add more as needed) -->
                         <p>Role: teacher</p>
@@ -56,19 +56,19 @@
             </div>
             <div class="modal-body">
                 <!-- Edit Profile Form (Add form elements as needed) -->
-                <form>
+                <form method="post" action="{{ url('teacher-profile-update/'. $teacherData->id) }}">
+                    @csrf
+                    @method('PUT')
                    <div class="mb-3">
                         <label for="editName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="editName" value="Teacher01">
+                        <input type="text" class="form-control" id="editName" name="name" value="{{$teacherData->name}}">
                    </div>
+
                     <div class="mb-3">
-                        <label for="editEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="editEmail" value="teacher@example.com">
+                        <label for="edit_age" class="form-label">Age</label>
+                        <input type="text" class="form-control" id="edit_age" name="age" value="{{$teacherData->age}}">
                     </div>
-                    <div class="mb-3">
-                        <label for="editNumber" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="editNumber" value="9856412735">
-                    </div>
+
                     <!-- Add more form fields as needed -->
 
                     <button type="submit" class="btn btn-primary">Save Changes</button>
