@@ -10,8 +10,14 @@
             </li> --}}
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('course.create')}}">
-                    <i class="fas fa-book"></i> Course Create
+                <a class="nav-link" href="{{ route('course.create.view')}}">
+                    <i class="fas fa-book"></i> Subject Create
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('topic.create.view')}}">
+                    <i class="fas fa-book"></i> Topic Create
                 </a>
             </li>
 

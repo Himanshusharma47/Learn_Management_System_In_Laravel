@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\AddTeacherController;
 use App\Http\Controllers\Admin\AdminViewController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Auth\AuthLoginController;
-use App\Http\Controllers\Teachers\CourseCreateController;
+use App\Http\Controllers\Admin\CourseCreateController;
 use App\Http\Controllers\Teachers\TeacherViewController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Mime\MessageConverter;
@@ -23,21 +24,26 @@ Route::get('/', function () {
     return view('login_form');
 });
 
+
+//login route section
 Route::post('/signin-data', [AuthLoginController::class, 'signinData'])->name('signin.data');
 Route::post('/signup-data', [AuthLoginController::class, 'signupData'])->name('signup.data');
 Route::get('/logout', [AuthLoginController::class, 'logout'])->name('logout');
 
 
+//communication route section
 Route::middleware(['auth'])->group(function () {
 
     Route::post('/message-send', [MessageController::class, 'sendMessage'])->name('message.send');
     Route::get('/messages', [MessageController::class, 'getMessages'])->name('messages');
 });
 
+
+// admin route section 
 Route::controller(AdminViewController::class)->group(function () {
-
+    
     Route::middleware(['admin'])->group(function () {
-
+        
         Route::get( '/dash', 'dashboard')->name('dashboard');
         Route::get( '/course', 'courses')->name('courses');
         Route::get( '/admin-profile', 'adminProfile')->name('admin.profile');
@@ -46,15 +52,22 @@ Route::controller(AdminViewController::class)->group(function () {
         Route::get( '/student', 'students')->name('students');
         Route::get( '/teacher', 'teachers')->name('teachers');
         Route::get( '/report', 'reports')->name('reports');
-        Route::get( '/add-teacher', 'addTeacher')->name('add.teacher');
+        Route::get( '/add-teacher-view', 'addTeacherView')->name('add.teacher.view');
     });
 });
 
+Route::post('/course-create', [CourseCreateController::class, 'courseCreate'])->name('course.create');
+Route::post('/add-teacher', [AddTeacherController::class, 'addTeacher'])->name('add.teacher');
+
+
+
+// teacher section start here 
 Route::controller(TeacherViewController::class)->group(function () {
 
     Route::middleware(['teacher'])->group(function () {
 
-        Route::get( '/courses', 'courseCreate')->name('course.create');
+        Route::get( '/course-create-view', 'courseCreateView')->name('course.create.view');
+        Route::get( '/topic-create-view', 'topicCreateView')->name('topic.create.view');
         Route::get( '/all-courses', 'allCourses')->name('all.courses');
         Route::get( '/attend', 'attendance')->name('student.attendance');
         Route::get( '/batch', 'studentBatch')->name('student.batch');
@@ -72,4 +85,4 @@ Route::controller(TeacherViewController::class)->group(function () {
 
 });
 
-Route::post('/course-create', [CourseCreateController::class, 'courseCreate'])->name('course.create');
+

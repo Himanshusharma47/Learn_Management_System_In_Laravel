@@ -29,7 +29,8 @@ class AdminViewController extends Controller
     public function courses()
     {
         $courseData = Course::all();
-        return view('superAdmin.courses', compact('courseData'));
+        $teacherData = User::where('role', 'teacher')->get();
+        return view('superAdmin.courses', compact('courseData', 'teacherData'));
     }
 
      /**
@@ -135,7 +136,7 @@ class AdminViewController extends Controller
      *
      * @return \Illuminate\Contracts\View\View
      */
-    public function addTeacher()
+    public function addTeacherView()
     {
         return view('superAdmin.add_teacher');
     }

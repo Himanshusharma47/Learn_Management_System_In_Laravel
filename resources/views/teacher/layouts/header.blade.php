@@ -57,9 +57,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                    <a id="notification-link" class="nav-link" href="#">Notifications <span id="notification-badge" class="badge rounded-pill bg-danger">5</span></a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('teacher.profile')}}">Profile</a>
                 </li>
@@ -72,26 +69,3 @@
 </nav>
 <!-- End Navigation Bar -->
 
-<div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="notificationModalLabel">Notifications</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Add your notification messages here -->
-                <p>Teacher A sent you a message: "Lorem ipsum dolor sit amet."</p>
-                <p>Teacher B sent you a message: "Consectetur adipiscing elit."</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    // Call this function to show the notification modal
-    function showNotificationModal() {
-        var notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
-        notificationModal.show();
-    }
-</script>

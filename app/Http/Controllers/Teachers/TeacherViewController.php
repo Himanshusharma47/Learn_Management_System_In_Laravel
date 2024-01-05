@@ -15,9 +15,19 @@ class TeacherViewController extends Controller
      *
      * @return \Illuminate\Contracts\View\View
      */
-    public function courseCreate()
+    public function courseCreateView()
     {
-        return view('teacher.course_create');
+        return view('teacher.subject_create');
+    }
+
+     /**
+     * Display the admin add category view.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function topicCreateView()
+    {
+        return view('teacher.topics_create');
     }
 
 

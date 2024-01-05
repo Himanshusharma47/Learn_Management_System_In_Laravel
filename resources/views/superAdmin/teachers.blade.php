@@ -14,7 +14,7 @@
             </div>
 
             <div class="mb-3">
-                <a href="{{ url('/add-teacher') }}"><button type="submit" class="btn btn-primary">Add Teacher</button></a>
+                <button type="submit" class="btn btn-primary"  data-toggle="modal"  data-target="#addTeacherModal">Add Teacher</button></a>
             </div>
 
             <!-- Users Table -->
@@ -48,6 +48,47 @@
                 </table>
             </div>
         </main>
+    </div>
+</div>
+
+<!-- Modal for Adding New Course -->
+<div class="modal fade" id="addTeacherModal" tabindex="-1" role="dialog" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCourseModalLabel">Add New Teacher</h5>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your form fields here -->
+                <form action="{{ route('add.teacher') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="role" value="teacher">
+
+                    <div class="form-group mb-3">
+                        <label for="name">Name :</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="email">Email :</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="age">Age :</label>
+                        <input type="text" class="form-control" id="age" name="age" placeholder="Enter Age ">
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="password">Password :</label>
+                        <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password ">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
