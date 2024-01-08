@@ -55,14 +55,13 @@
                     @method('PUT')
                     <div class="mb-3">
                         <label for="edit_name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="edit_name" name="name" value="{{$adminData->name}}">
+                        <input type="text" class="form-control" id="edit_name" name="name" value="{{ $adminData->name }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="edit_age" class="form-label">Age</label>
-                        <input type="text" class="form-control" id="edit_age" name="age" value="{{$adminData->age}}">
+                        <input type="text" class="form-control" id="edit_age" name="age" value="{{ $adminData->age }}">
                     </div>
-                    <!-- Add more form fields as needed -->
 
                     <button type="submit" class="btn btn-primary">Save Changes</button>
                 </form>

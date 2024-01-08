@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
@@ -84,8 +85,10 @@ class AdminViewController extends Controller
      */
     public function communication()
     {
+        $user = Auth::user();
         $teacherData = User::where('role', 'teacher')->get();
-        return view('superAdmin.communication', compact('teacherData'));
+        $messages = Message::where('receiver_id', $user->id)->with('sender')->get();
+        return view('superAdmin.communication', compact('teacherData', 'messages'));
     }
 
      /**

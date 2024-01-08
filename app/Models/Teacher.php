@@ -16,5 +16,5 @@ class Teacher extends Model
     ];
 
     protected $table = 'teachers';
-    public $timestamps = false;
+    // public $timestamps = false;
 }

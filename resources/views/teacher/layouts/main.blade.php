@@ -3,7 +3,7 @@
     @yield('teacher-profile-section')
     @yield('student-performance-section')
     @yield('overall-course-section')
-    @yield('teacher-convo-section')
+    @yield('message-section')
     @yield('course-create-section')
     @yield('topic-create-section')
     @yield('course-view-section')

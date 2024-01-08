@@ -10,7 +10,7 @@
             </li> --}}
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('course.create.view')}}">
+                <a class="nav-link" href="{{ route('subject.create.view')}}">
                     <i class="fas fa-book"></i> Subject Create
                 </a>
             </li>
@@ -70,7 +70,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('teacher.convo')}}">
+                <a class="nav-link" href="{{ route('teacher.message')}}">
                     <i class="fas fa-comments"></i> Messages
                 </a>
             </li>

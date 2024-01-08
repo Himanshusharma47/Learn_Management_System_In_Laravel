@@ -1,60 +1,83 @@
-@extends('teacher.layouts.main')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Chat Page</title>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Add your custom styles here */
+    #chat-container {
+      max-width: 600px;
+      margin: auto;
+    }
+    #chat-messages {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
 
-@section('dummydata-section')
-<div class="container-fluid">
-    <div class="row">
-
-@include('teacher.layouts.sidebar')
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-<div class="container mt-5">
-    <h2 class="mb-4">Hi, this page is for dummy data</h2>
-
-    <form action="" method="post">
-        @csrf
-        
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="age" class="form-label">Age</label>
-            <input type="text" id="age" name="age" class="form-control" placeholder="Enter Age" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter Phone Number" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="role" class="form-label">Select Option</label>
-            <select name="role" id="role" class="form-select" required>
-                <option value="admin">Admin</option>
-                <option value="teacher">Teacher</option>
-                <option value="student">Student</option>
-            </select>
-        </div>
-        
-        <div class="mb-3">
-            <label for="course" class="form-label">Select Category</label>
-            <select name="course" id="course" class="form-select" required>
-                <option value="bsc">Bsc</option>
-                <option value="ba">Ba</option>
-                <option value="bba">BBa</option>
-                <option value="bcom">B.Com</option>
-            </select>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-</main>
+<div class="container mt-5" id="chat-container">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      Chat History
     </div>
+    <div class="card-body" id="chat-messages">
+      <!-- Chat messages will be appended here dynamically -->
+    </div>
+    <div class="card-footer">
+      <div class="form-group">
+        <label for="replyBox">Reply:</label>
+        <textarea class="form-control" id="replyBox" rows="2"></textarea>
+      </div>
+      <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
 </div>
-@endsection 
+
+<!-- Include Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  function getCurrentTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    return `${hours}:${minutes}`;
+  }
+
+  function appendMessage(user, message) {
+    const chatMessages = document.getElementById('chat-messages');
+    const currentTime = getCurrentTime();
+    const messageHTML = `
+      <div class="mb-2">
+        <strong>${user}</strong> (${currentTime}): ${message}
+      </div>
+    `;
+    chatMessages.innerHTML += messageHTML;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function sendMessage() {
+    const replyBox = document.getElementById('replyBox');
+    const message = replyBox.value.trim();
+    if (message !== '') {
+      appendMessage('You', message);
+      // You can send the message to the server or perform any other necessary actions here
+      replyBox.value = ''; // Clear the reply box after sending the message
+    }
+  }
+
+  // Sample chat history
+  appendMessage('User1', 'Hello!');
+  appendMessage('User2', 'Hi there!');
+  appendMessage('User1', 'How are you doing?');
+</script>
+
+</body>
+</html>

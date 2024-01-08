@@ -1,36 +1,50 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Teachers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Message;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
 
-class MessageController extends Controller
+class TeacherMessageController extends Controller
 {
-    public function sendMessageForm()
+    public function teachersMessage()
     {
-        // $teacherData = // Logic to fetch teachers data, you can replace this with your implementation
-
-        // return view('admin.send_message', compact('teacherData'));
+        $data = User::whereIn('role', ['super_admin','teacher'])->get();
+        $messageData = Message::with('sender')->get();
+        return view('teacher.message', compact('data', 'messageData'));
     }
 
     public function sendMessage(Request $request)
     {
-        $message = new Message([
-            'sender_id' => Auth::id(),
-            'receiver_id' => $request->receiver_id,
-            'message' => $request->message,
+        // Validate the request
+        $request->validate([
+            'receiver_id' => 'required|exists:users,id',
+            'message' => 'required',
         ]);
-        $message->save();
 
-        return redirect()->back()->with('success', 'Message sent successfully.');
+        // Create a new message
+        Message::create([
+            'sender_id' => auth()->id(),
+            'receiver_id' => $request->input('receiver_id'),
+            'message' => $request->input('message'),
+        ]);
+
+        return redirect()->back()->with('success', 'Message sent successfully');
     }
 
     public function replyMessage(Request $request)
     {
+        // Validate the request
+        $request->validate([
+            'sender_id' => 'required|exists:users,id',
+            'receiver_id' => 'required|exists:users,id',
+            'message' => 'required',
+        ]);
+
+        // Find the original message
         $message = new Message([
             'sender_id' => $request->sender_id,
             'receiver_id' => $request->receiver_id,
@@ -57,6 +71,4 @@ class MessageController extends Controller
 
         return view('superAdmin.communication', compact('userMessages', 'teacherData', 'messages'));
     }
-
-
 }

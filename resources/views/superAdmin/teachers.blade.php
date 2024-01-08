@@ -79,7 +79,7 @@
                         <label for="age">Age :</label>
                         <input type="text" class="form-control" id="age" name="age" placeholder="Enter Age ">
                     </div>
-                    
+
                     <div class="form-group mb-3">
                         <label for="password">Password :</label>
                         <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password ">

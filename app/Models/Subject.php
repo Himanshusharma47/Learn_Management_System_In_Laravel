@@ -22,7 +22,7 @@ class Subject extends Model
     ];
 
     protected $table = 'subjects';
-    public $timestamps = false;
+    // public $timestamps = false;
 
     public function course()
     {

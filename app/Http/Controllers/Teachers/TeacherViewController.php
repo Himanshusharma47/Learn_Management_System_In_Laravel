@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Teachers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
+use App\Models\Message;
+use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -15,9 +18,11 @@ class TeacherViewController extends Controller
      *
      * @return \Illuminate\Contracts\View\View
      */
-    public function courseCreateView()
+    public function subjectCreateView()
     {
-        return view('teacher.subject_create');
+        $user = Auth::user();
+        $courseData = Course::where('teacher_id', $user->id)->first();
+        return view('teacher.subject_create', compact('courseData'));
     }
 
      /**
@@ -27,7 +32,8 @@ class TeacherViewController extends Controller
      */
     public function topicCreateView()
     {
-        return view('teacher.topics_create');
+        $subjectData = Subject::all();
+        return view('teacher.topics_create', compact('subjectData'));
     }
 
 
@@ -38,6 +44,7 @@ class TeacherViewController extends Controller
      */
     public function allCourses()
     {
+
         return view('teacher.all_courses');
     }
 
@@ -96,17 +103,18 @@ class TeacherViewController extends Controller
         return view('teacher.lecture_summary');
     }
 
-
      /**
      * Display the admin add category view.
      *
      * @return \Illuminate\Contracts\View\View
      */
-    public function teachersConvo()
+    public function teachersMessage()
     {
-        return view('teacher.teachers_convo');
+        $user = auth()->id();
+        $data = User::whereIn('role', ['super_admin','teacher'])->get();
+        $messageData = Message::where('receiver_id', $user)->with('sender')->get();
+        return view('teacher.message', compact('data', 'messageData'));
     }
-
 
      /**
      * Display the admin add category view.

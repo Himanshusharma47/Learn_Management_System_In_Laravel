@@ -15,16 +15,16 @@
                   <h2>Create Topics</h2>
 
                   <!-- Course Creation Form -->
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('topic.create')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group mb-3">
                             <label for="subject_id">Select Subject :</label>
                             <select name="subject_id" class="form-control" id="subject_id">
                                 <option selected>Subjects</option>
-                                {{-- @foreach ($teacherData as $item)
-                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                @endforeach --}}
+                                @foreach ($subjectData as $item)
+                                <option value="{{ $item->id }}">{{ $item->subject_name }}</option>
+                                @endforeach
                             </select>
                         </div>
 
@@ -36,6 +36,9 @@
                         <div class="form-group mb-3">
                             <label for="file_path">Upload File :</label>
                             <input type="file" class="form-control" id="file_path" name="file_path" required/>
+                            @error('file_path')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <button type="submit" class="btn btn-primary">Create</button>

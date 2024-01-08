@@ -20,11 +20,11 @@ class Course extends Model
         'teacher_id',
         'students',
         'duration',
-       
+
     ];
 
     protected $table = 'courses';
-    public $timestamps = false;
+    // public $timestamps = false;
 
     public function teacher()
     {

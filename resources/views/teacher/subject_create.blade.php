@@ -8,7 +8,6 @@
 
         @include('teacher.layouts.sidebar')
 
-           <!-- Content -->
           <!-- Content -->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="container mt-5">
@@ -16,29 +15,26 @@
                   <h2>Create Subject</h2>
 
                   <!-- Course Creation Form -->
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('subject.create') }}" method="POST" >
                         @csrf
 
+                        <input type="hidden" name="course_id" value="{{ $courseData->id}}" required>
                         <div class="form-group mb-3">
-                            <label for="course_id">Select Course</label>
-                            <select name="course_id" class="form-control" id="course_id">
-                                <option selected>Courses</option>
-                                {{-- @foreach ($teacherData as $item)
-                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                @endforeach --}}
-                            </select>
+                            <label for="course_id"> Course</label>
+                            <input  type="text" class="form-control" id="course_name" name="course_name" value="{{ $courseData->course_name}}">
+
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="subject_name">Subject Name :</label>
                             <input  type="text" class="form-control" id="subject_name" name="subject_name" placeholder="Enter Subject" required>
                         </div>
-                        
+
                         <div class="form-group mb-3">
                             <label for="subject_code">Subject Code :</label>
                             <input  type="text" class="form-control" id="subject_code" name="subject_code" placeholder="Enter Subject" required>
                         </div>
-                        
+
                         <div class="form-group mb-3">
                             <label for="description">Description :</label>
                             <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter description" required></textarea>
