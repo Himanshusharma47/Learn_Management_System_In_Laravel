@@ -1,5 +1,9 @@
 @extends('teacher.layouts.main')
 
+@push('title')
+  All Courses
+@endpush
+
 @section('course-view-section')
 
 <!-- Main Content -->

@@ -1,5 +1,9 @@
 @extends('teacher.layouts.main')
 
+@push('title')
+  Topic Create
+@endpush
+
 @section('topic-create-section')
 
 <!-- Main Content -->
@@ -10,6 +14,21 @@
 
           <!-- Content -->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+            <!-- Alert Messages Here-->
+            @if (Session('success'))
+                <div class="alert alert-success" id="popup">
+                    {{ session('success') }}
+                </div>
+                @endif
+
+            @if (Session('error'))
+                <div class="alert alert-danger" id="popup">
+                        {{ session('error') }}
+                </div>
+            @endif
+            <!-- Alert Messages Here-->
+
             <div class="container mt-5">
                 <div class="card shadow p-4 mb-4">
                   <h2>Create Topics</h2>

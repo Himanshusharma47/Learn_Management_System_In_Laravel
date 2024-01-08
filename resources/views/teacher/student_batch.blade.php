@@ -1,5 +1,9 @@
 @extends('teacher.layouts.main')
 
+@push('title')
+  Student Batch
+@endpush
+
 @section('student-batch-section')
 
 <!-- Main Content -->
@@ -9,6 +13,21 @@
         @include('teacher.layouts.sidebar')
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+            <!-- Alert Messages Here-->
+            @if (Session('success'))
+                <div class="alert alert-success" id="popup">
+                    {{ session('success') }}
+                </div>
+                @endif
+
+            @if (Session('error'))
+                <div class="alert alert-danger" id="popup">
+                        {{ session('error') }}
+                </div>
+            @endif
+            <!-- Alert Messages Here-->
+
             <div class="container mt-5">
                 <h2>Create Student Batches and Assign Courses/Syllabus</h2>
 

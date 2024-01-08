@@ -1,5 +1,9 @@
 @extends('teacher.layouts.main')
 
+@push('title')
+  Lecture Summary
+@endpush
+
 @section('lecture-summary-section')
 
 <!-- Main Content -->
@@ -18,16 +22,16 @@
                       <label for="lectureDate">Lecture Date:</label>
                       <input type="date" class="form-control" id="lectureDate">
                     </div>
-                    
+
                     <div class="form-group mb-3">
                       <label for="summary">Lecture Summary:</label>
                       <textarea class="form-control" id="summary" rows="4" placeholder="Enter Lecture Summary"></textarea>
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary">Post Summary</button>
                   </form>
-                </div>  
-                  
+                </div>
+
                   <!-- Dummy Data Display -->
                 <div class="card shadow p-4 mb-4">
                   <div class="mt-4">
@@ -38,7 +42,7 @@
                     <p><strong>Date:</strong> 2023-01-16</p>
                     <p><strong>Summary:</strong> Another dummy summary for the lecture on Topic 3 and Topic 4.</p>
                   </div>
-                </div>  
+                </div>
             </div>
         </main>
     </div>

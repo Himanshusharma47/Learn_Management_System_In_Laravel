@@ -1,5 +1,9 @@
 @extends('superAdmin.layouts.main')
 
+@push('title')
+  Profile
+@endpush
+
 @section('profile-section')
 
 <!-- Main Content -->

@@ -112,7 +112,7 @@ class TeacherViewController extends Controller
     {
         $user = auth()->id();
         $data = User::whereIn('role', ['super_admin','teacher'])->get();
-        $messageData = Message::where('receiver_id', $user)->with('sender')->get();
+        $messageData = Message::where('receiver_id', $user)->with('sender')->orderBy('created_at', 'desc')->get();
         return view('teacher.message', compact('data', 'messageData'));
     }
 

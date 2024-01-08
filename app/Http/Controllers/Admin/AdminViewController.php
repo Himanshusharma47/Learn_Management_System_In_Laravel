@@ -87,7 +87,7 @@ class AdminViewController extends Controller
     {
         $user = Auth::user();
         $teacherData = User::where('role', 'teacher')->get();
-        $messages = Message::where('receiver_id', $user->id)->with('sender')->get();
+        $messages = Message::where('receiver_id', $user->id)->with('sender')->orderBy('created_at', 'desc')->get();
         return view('superAdmin.communication', compact('teacherData', 'messages'));
     }
 

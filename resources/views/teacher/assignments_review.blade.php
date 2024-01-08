@@ -1,5 +1,9 @@
 @extends('teacher.layouts.main')
 
+@push('title')
+  Assignment Review
+@endpush
+
 @section('assignments-review-section')
 
 <!-- Main Content -->

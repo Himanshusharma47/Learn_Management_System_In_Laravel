@@ -1,5 +1,10 @@
 @extends('superAdmin.layouts.main')
 
+@push('title')
+  Reports
+@endpush
+
+
 @section('report-section')
 
 <!-- Main Content -->
@@ -8,9 +13,23 @@
 
         @include('superAdmin.layouts.sidebar')
 
-         <!-- Content -->
         <!-- Content -->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+            <!-- Alert Messages Here-->
+            @if (Session('success'))
+                <div class="alert alert-success" id="popup">
+                    {{ session('success') }}
+                </div>
+                @endif
+
+            @if (Session('error'))
+                <div class="alert alert-danger" id="popup">
+                        {{ session('error') }}
+                </div>
+            @endif
+            <!-- Alert Messages Here-->
+
             <!-- Reports Section -->
             <div class="container-fluid">
                 <h2 class="mt-4">Reports</h2>

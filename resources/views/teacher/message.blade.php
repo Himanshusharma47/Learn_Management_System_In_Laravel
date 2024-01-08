@@ -1,5 +1,9 @@
 @extends('teacher.layouts.main')
 
+@push('title')
+  Message
+@endpush
+
 @section('message-section')
 
 <!-- Main Content -->
@@ -12,9 +16,24 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <!-- Communication Form -->
             <div class="container-fluid">
+
+                <!-- Alert Messages Here-->
+                @if (Session('success'))
+                    <div class="alert alert-success" id="popup">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+
+                @if (Session('error'))
+                    <div class="alert alert-danger" id="popup">
+                            {{ session('error') }}
+                    </div>
+                @endif
+                <!-- Alert Messages Here-->
+
                 <h2 class="mt-4">Message</h2>
                 <div class="row mt-4">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title mb-3">Send Message</h5>
@@ -39,11 +58,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Display Messages Table -->
-                <div class="row mt-4">
-                    <div class="col-md-12">
+
+                    <!-- Display Messages Table -->
+                    <div class="col-md-8">
                         <div class="card shadow">
                             <div class="card-body">
                                 <h5 class="card-title mb-3">Received Messages</h5>
@@ -63,44 +81,10 @@
                                                 <td>{{ $message->message }}</td>
                                                 <td> {{ $message->created_at->format('Y-m-d H:i:s') }}</td>
                                                 <td>
-                                                    {{-- <a href="{{ url('teacher-message-view/'.$message->sender->id) }}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#replyModal{{ $message->id }}">View</a> --}}
                                                     <a href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#replyModal" data-user-id="{{ $message->sender->id }}">View</a>
                                                     <button class="btn btn-danger btn-sm">Delete</button>
                                                 </td>
                                             </tr>
-
-                                            {{-- <!-- Reply Modal -->
-                                            <div class="modal fade" id="replyModal{{ $message->id }}" tabindex="-1" role="dialog" aria-labelledby="replyModalLabel{{ $message->id }}" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="replyModalLabel{{ $message->id }}">Reply to {{ $message->sender->name }}</h5>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                             <!-- Display Sender Name, Time, and Message -->
-                                                             <p><strong>Sender:</strong> {{ $message->sender->name }}</p>
-                                                             <p><strong>Time:</strong> {{ $message->created_at->format('Y-m-d H:i:s') }}</p>
-                                                             @if (isset($userMessages))
-                                                                 @foreach ($userMessages as $msg)
-                                                                 <p><strong>{{ $msg->created_at->format('H:i') }}:</strong> {{ $msg->message }} </p>
-                                                                 @endforeach
-                                                             @endif
-
-                                                             <!-- Reply Form -->
-                                                             <form method="post" action="{{ route('teacher.message.reply') }}">
-                                                                 @csrf
-                                                                 <input type="hidden" name="sender_id" value="{{ Auth::id() }}">
-                                                                 <input type="hidden" name="receiver_id" value="{{ $message->sender->id }}">
-                                                                 <div class="form-group">
-                                                                     <label for="replyMessage"><b>Reply</b> </label>
-                                                                     <textarea class="form-control" name="message" id="replyMessage" rows="3"></textarea>
-                                                                 </div><br>
-                                                                 <button type="submit" class="btn btn-primary btn-sm">Reply</button>
-                                                             </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
 
                                              <!-- Reply Modal -->
                                              <div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="replyModalLabel" aria-hidden="true">
@@ -143,13 +127,13 @@ $(document).ready(function() {
             success: function(response) {
                 // Update modal content with chat history
                 var modalBody = $('#replyModalBody');
-                modalBody.empty(); 
+                modalBody.empty();
 
                 if (response.userMessages.length > 0) {
                     $.each(response.userMessages, function(index, message) {
                         var createdAt = new Date(message.created_at);
                         var formattedTime = createdAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                        var messageHtml = '<span>' + formattedTime+'</span><p><strong>' + ':</strong> ' + message.message + '</p>';
+                        var messageHtml = '<span>' + formattedTime +'</span><p><strong>' + message.sender.name+ ':</strong> ' + message.message + '</p>';
                         modalBody.append(messageHtml);
                     });
                 } else {

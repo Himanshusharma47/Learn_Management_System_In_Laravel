@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Session;
 
 class AuthLoginController extends Controller
 {
+    public function login()
+    {
+        return view('login_form');
+    }
+
     public function signinData( Request $request)
     {
         $request->validate([
@@ -31,6 +36,10 @@ class AuthLoginController extends Controller
             } elseif ($user->role === 'teacher') {
 
                 return redirect('/teacher-profile');
+            }
+             elseif ($user->role === 'student') {
+
+                return redirect('/index');
             }
         }
 

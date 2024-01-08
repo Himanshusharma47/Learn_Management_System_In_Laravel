@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Form</title>
     <link rel="stylesheet" href="{{ asset('assets/login/css/style.css')}}">
 </head>
 <body>
 
     @if (Session('success'))
-    <h1>
+    <h5>
     {{ session('success') }}
-    </h1>
+    </h5>
     @endif
     @if (Session('error'))
-    <h1>
+    <h5>
         {{ session('error') }}
-    </h1>
+    </h5>
     @endif
 
     <div class="container" id="container">
@@ -53,8 +53,7 @@
                     @error('email')
                         {{ $message }}
                     @enderror
-                <input type="password" name="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
+                <input type="password" name="password" placeholder="Password" /><br>
                 <button type="submit"> Sign In </button>
             </form>
         </div>

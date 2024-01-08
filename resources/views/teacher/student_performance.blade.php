@@ -1,7 +1,10 @@
 @extends('teacher.layouts.main')
 
-@section('student-performance-section')
+@push('title')
+  Student Performance
+@endpush
 
+@section('student-performance-section')
 
 <!-- Main Content -->
 <div class="container-fluid">

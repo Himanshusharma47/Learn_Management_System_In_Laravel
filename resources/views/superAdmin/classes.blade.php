@@ -1,5 +1,10 @@
 @extends('superAdmin.layouts.main')
 
+@push('title')
+  Classes
+@endpush
+
+
 @section('classes-section')
 
 <!-- Main Content -->

@@ -1,5 +1,9 @@
 @extends('teacher.layouts.main')
 
+@push('title')
+  Profile
+@endpush
+
 @section('teacher-profile-section')
 
 <!-- Main Content -->

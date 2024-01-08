@@ -1,7 +1,10 @@
 @extends('teacher.layouts.main')
 
-@section('overall-course-section')
+@push('title')
+  Overall Course Progress
+@endpush
 
+@section('overall-course-section')
 
 <!-- Main Content -->
 <div class="container-fluid">
@@ -11,7 +14,20 @@
 
         <!-- Content -->
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-        <!-- Add your content here -->
+
+            <!-- Alert Messages Here-->
+            @if (Session('success'))
+                <div class="alert alert-success" id="popup">
+                    {{ session('success') }}
+                </div>
+                @endif
+
+            @if (Session('error'))
+                <div class="alert alert-danger" id="popup">
+                        {{ session('error') }}
+                </div>
+            @endif
+            <!-- Alert Messages Here-->
 
         <!-- Graphs Section -->
         <div class="container-fluid">

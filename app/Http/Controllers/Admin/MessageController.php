@@ -10,12 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
-    public function sendMessageForm()
-    {
-        // $teacherData = // Logic to fetch teachers data, you can replace this with your implementation
-
-        // return view('admin.send_message', compact('teacherData'));
-    }
 
     public function sendMessage(Request $request)
     {
@@ -40,23 +34,6 @@ class MessageController extends Controller
 
         return redirect()->back()->with('success', 'Reply Sent successfully.');
     }
-
-    // public function viewMessages($id='')
-    // {
-    //     $user = Auth::user();
-
-    //     $teacherData = User::where('role', 'teacher')->get();
-    //     $messages = Message::where('receiver_id', $user->id)->with('sender')->get();
-
-    //     $userMessages = Message::where(function ($query) use ($id) {
-    //         $query->where('sender_id', Auth::id())->where('receiver_id', $id);
-    //     })->orWhere(function ($query) use ($id) {
-    //         $query->where('receiver_id', Auth::id())->where('sender_id', $id);
-    //     })->orderBy('created_at', 'asc')->get();
-
-
-    //     return view('superAdmin.communication', compact('userMessages', 'teacherData', 'messages'));
-    // }
 
     public function getMessageView($userId)
     {

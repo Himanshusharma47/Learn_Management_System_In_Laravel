@@ -1,5 +1,10 @@
 @extends('superAdmin.layouts.main')
 
+@push('title')
+  Dashboard
+@endpush
+
+
 @section('dashboard-section')
 
 

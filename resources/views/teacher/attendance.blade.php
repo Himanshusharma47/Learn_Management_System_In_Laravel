@@ -1,5 +1,9 @@
 @extends('teacher.layouts.main')
 
+@push('title')
+  Attendance
+@endpush
+
 @section('attendance-section')
 
 <!-- Main Content -->
@@ -12,7 +16,7 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="container mt-5">
                 <h2>Attendance Details</h2>
-              
+
                 <!-- Attendance Table -->
                 <table class="table mt-4">
                   <thead>
@@ -41,7 +45,7 @@
                     <!-- Add more rows as needed -->
                   </tbody>
                 </table>
-              
+
                 <!-- Attendance Summary -->
                 <div class="mt-4">
                   <h4>Attendance Summary</h4>

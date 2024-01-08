@@ -9,13 +9,15 @@
 <!-- Add this to include Bootstrap JavaScript -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-<!-- Call the showNotificationModal function when the "Notifications" link is clicked -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('notification-link').addEventListener('click', function () {
-            showNotificationModal();
-        });
+    $(document).ready(function () {
+        var popup = $('#popup');
+
+        popup.fadeIn();
+
+        setTimeout(function() {
+            popup.fadeOut();
+        }, 2000);
     });
 </script>
 

@@ -1,5 +1,9 @@
 @extends('teacher.layouts.main')
 
+@push('title')
+  Assignments
+@endpush
+
 @section('assignments-section')
 
 <!-- Main Content -->
@@ -12,7 +16,7 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="container mt-5">
               <h2>Create Assignment</h2>
-              
+
               <div class="card shadow p-4 mb-4">
                 <!-- Assignment Creation Form -->
                 <form method="post" enctype="multipart/form-data">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your LMS Title</title>
+    <title>@stack('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 
@@ -41,6 +41,13 @@
             border-radius: 50%;
         }
 
+        .profile-photo {
+            width: 30px; /* Set the desired width */
+            height: 30px; /* Set the desired height */
+            border-radius: 50%; /* Make it a circular photo */
+            margin-right: 5px; /* Add some spacing between the photo and the text */
+        }
+
         .bg-color{
             background: linear-gradient(to right, #FF4B2B, #FF416C);
         }
@@ -58,10 +65,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('teacher.profile')}}">Profile</a>
+                    <a class="nav-link" href="{{ route('teacher.profile')}}"><img src="https://images.unsplash.com/photo-1573166364524-d9dbfd8bbf83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D" alt="Profile Photo" class="profile-photo"><strong>Profile</strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                    <a class="nav-link" href="{{ route('logout') }}"><strong>Logout</strong></a>
                 </li>
             </ul>
         </div>
