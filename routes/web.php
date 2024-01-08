@@ -26,6 +26,9 @@ use Symfony\Component\Mime\MessageConverter;
 Route::get('/', function () {
     return view('login_form');
 });
+Route::get('/std', function () {
+    return view('student.index');
+});
 
 
 //login route section
@@ -43,7 +46,8 @@ Route::get('/logout', [AuthLoginController::class, 'logout'])->name('logout');
 
 Route::post('/message/send', [MessageController::class, 'sendMessage'])->name('send.message');
 Route::post('/message/reply', [MessageController::class, 'replyMessage'])->name('message.reply');
-Route::get('/message-view/{id}', [MessageController::class, 'viewMessages']);
+// Route::get('/message-view/{id}', [MessageController::class, 'viewMessages']);
+Route::get('/message-view/{userId}', [MessageController::class, 'getMessageView'])->name('message.view');
 
 
 // admin route section
@@ -98,7 +102,8 @@ Route::controller(TeacherViewController::class)->group(function () {
 
         Route::post('/message-send', [TeacherMessageController::class, 'sendMessage'])->name('teacher.sendMessage');
         Route::post('/message-reply', [TeacherMessageController::class, 'replyMessage'])->name('teacher.message.reply');
-        Route::get('/teacher-message-view/{id}', [TeacherMessageController::class, 'viewMessages']);
+        // Route::get('/teacher-message-view/{id}', [TeacherMessageController::class, 'viewMessages']);
+        Route::get('/teacher-message-view/{userid}', [TeacherMessageController::class, 'getMessageView'])->name('teacher.message.view');
     });
     Route::view('/dummy', 'teacher.dummydata');
 

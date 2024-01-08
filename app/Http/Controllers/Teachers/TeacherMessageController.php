@@ -55,6 +55,8 @@ class TeacherMessageController extends Controller
         return redirect()->back()->with('success', 'Reply Sent successfully.');
     }
 
+
+    // this funtion is for only laravel code not for ajax .for ajax, code function written in after this function getMessageView 
     public function viewMessages($id='')
     {
         $user = Auth::user();
@@ -70,5 +72,18 @@ class TeacherMessageController extends Controller
 
 
         return view('superAdmin.communication', compact('userMessages', 'teacherData', 'messages'));
+    }
+
+    public function getMessageView($userId)
+    {
+        $userMessages = Message::where('receiver_id', Auth::id())
+            ->where('sender_id', $userId)
+            ->orWhere('receiver_id', $userId)
+            ->where('sender_id', Auth::id())
+            ->with('sender')
+            ->orderBy('created_at', 'asc')
+            ->get();
+
+        return response()->json(['userMessages' => $userMessages]);
     }
 }

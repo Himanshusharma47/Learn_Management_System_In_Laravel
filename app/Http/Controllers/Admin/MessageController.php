@@ -41,21 +41,34 @@ class MessageController extends Controller
         return redirect()->back()->with('success', 'Reply Sent successfully.');
     }
 
-    public function viewMessages($id='')
+    // public function viewMessages($id='')
+    // {
+    //     $user = Auth::user();
+
+    //     $teacherData = User::where('role', 'teacher')->get();
+    //     $messages = Message::where('receiver_id', $user->id)->with('sender')->get();
+
+    //     $userMessages = Message::where(function ($query) use ($id) {
+    //         $query->where('sender_id', Auth::id())->where('receiver_id', $id);
+    //     })->orWhere(function ($query) use ($id) {
+    //         $query->where('receiver_id', Auth::id())->where('sender_id', $id);
+    //     })->orderBy('created_at', 'asc')->get();
+
+
+    //     return view('superAdmin.communication', compact('userMessages', 'teacherData', 'messages'));
+    // }
+
+    public function getMessageView($userId)
     {
-        $user = Auth::user();
+        $userMessages = Message::where('receiver_id', Auth::id())
+            ->where('sender_id', $userId)
+            ->orWhere('receiver_id', $userId)
+            ->where('sender_id', Auth::id())
+            ->orderBy('created_at', 'asc')
+            ->with('sender')
+            ->get();
 
-        $teacherData = User::where('role', 'teacher')->get();
-        $messages = Message::where('receiver_id', $user->id)->with('sender')->get();
-
-        $userMessages = Message::where(function ($query) use ($id) {
-            $query->where('sender_id', Auth::id())->where('receiver_id', $id);
-        })->orWhere(function ($query) use ($id) {
-            $query->where('receiver_id', Auth::id())->where('sender_id', $id);
-        })->orderBy('created_at', 'asc')->get();
-
-
-        return view('superAdmin.communication', compact('userMessages', 'teacherData', 'messages'));
+        return response()->json(['userMessages' => $userMessages]);
     }
 
 
