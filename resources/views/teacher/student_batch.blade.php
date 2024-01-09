@@ -36,21 +36,17 @@
                     <h4 class="mb-4">Batch Creation Form</h4>
                     <form>
                         <div class="form-group mb-3">
-                            <label for="batchName">Batch Name:</label>
-                            <input type="text" class="form-control" id="batchName" placeholder="Enter Batch Name">
+                            <label for="batch_name"> Batch Name: </label>
+                            <input type="text" class="form-control" id="batch_name" name="batch_name" placeholder="Enter Batch Name">
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="courseSelection"> Course: </label>
+                            <input type="text" class="form-control" id="course_name"  name="course_name">
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="courseSelection">Select Course:</label>
-                            <select class="form-control" id="courseSelection" name="courseSelection">
-                                <option value="Course 1">Course 1</option>
-                                <option value="Course 2">Course 2</option>
-                                <option value="Course 3">Course 3</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="syllabusSelection">Select Syllabus:</label>
+                            <label for="Subje"> Select Syllabus: </label>
                             <select class="form-control" id="syllabusSelection" name="syllabusSelection">
                                 <option value="Syllabus 1">Syllabus 1</option>
                                 <option value="Syllabus 2">Syllabus 2</option>
@@ -59,7 +55,7 @@
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="startDate">Start Date:</label>
+                            <label for="startDate">Start Date: </label>
                             <input type="date" class="form-control" id="startDate" name="startDate">
                         </div>
 
